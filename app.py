@@ -9,14 +9,10 @@ def hello_world():
     return 'Hello World!'
 
 
-@app.route('/hello/<name>')
-def hello(name):
-    return 'Hello ' + name + '!'
-
 
 @app.route('/hello/<phone_number>')
-def hello(phone_number):
-    sns = boto3.client('sns')
+def hello_2(phone_number):
+    sns = boto3.client('sns', region_name='us-west-2')
     sns.publish(
         PhoneNumber=phone_number,
         Message=(
