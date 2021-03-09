@@ -4,7 +4,7 @@ service: flask-api
 
 provider:
   name: aws
-  runtime: python3.7
+  runtime: python3.8
 
 functions:
   app:
