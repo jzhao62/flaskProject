@@ -5,6 +5,10 @@ service: flask-api
 provider:
   name: aws
   runtime: python3.8
+  iamRoleStatements:
+    - Effect: Allow
+      Action: "sns:Publish"
+      Resource: "*"
 
 functions:
   app:
